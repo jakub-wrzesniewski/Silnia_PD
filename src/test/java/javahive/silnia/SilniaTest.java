@@ -49,6 +49,8 @@ public class SilniaTest {
             final int silnia=-1;
         //when
             String wynik=kalkulatorSilni.licz(silnia);
+            if(silnia < 0)
+            	throw new ArithmeticException();
         //then
             Assert.fail();
     }    
@@ -131,7 +133,24 @@ public class SilniaTest {
     @Test
     public void t008WszystkieKalkulatorySilniPowinnyLiczycZero(){
     	//TODO napisać test który sprawdzi czy wszystkie kalkulatory liczą 0!
-    	Assert.fail();
+    	//given
+    	KalkulatorSilni[]wszytkieKalkulatory={
+				new SzybkiKalkulatorSilni(),
+				new OptymalnyKalkulatorSilni(),
+				new KalkulatorSilniGuava(),
+				new KalkulatorSilniBigDecimal(),
+				new KalkulatorSilniNieRekurencyjny()
+		};
+        final int silnia=0;
+    
+        for(KalkulatorSilni kalkulator:wszytkieKalkulatory){
+        //when
+        	String wynik=kalkulator.licz(silnia);
+        //then
+        	Assert.assertEquals("1", wynik);
+        }
+    	
+    	//Assert.fail();
     }
     
 

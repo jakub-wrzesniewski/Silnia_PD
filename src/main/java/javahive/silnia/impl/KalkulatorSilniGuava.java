@@ -1,8 +1,10 @@
 package javahive.silnia.impl;
 
-import javahive.silnia.KalkulatorSilni;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+import java.math.BigInteger;
 
+import com.google.common.math.BigIntegerMath;
+
+import javahive.silnia.KalkulatorSilni;
 
 /**
  *
@@ -24,6 +26,7 @@ public class KalkulatorSilniGuava implements KalkulatorSilni{
          * do pliku pom.xml
          * 
          */
-        throw new NotImplementedException();
+    	return BigIntegerMath.factorial(arg).toString();
+        //throw new NotImplementedException();
     }
 }

@@ -3,6 +3,7 @@ package javahive.silnia.impl;
 
 import javahive.silnia.KalkulatorSilni;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+import java.math.BigDecimal;
 
 /**
  *
@@ -15,6 +16,11 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 public class KalkulatorSilniBigDecimal implements KalkulatorSilni{
     public String licz(int arg) {
-        throw new NotImplementedException();
+        //throw new NotImplementedException();
+    	//String stringArg = ""+arg;
+    	BigDecimal BDWynik = BigDecimal.ONE;
+    	for(int i=1; i<=arg; i++)
+    		BDWynik = BDWynik.multiply(new BigDecimal(i));
+    	return BDWynik.toString();
     }
 }
