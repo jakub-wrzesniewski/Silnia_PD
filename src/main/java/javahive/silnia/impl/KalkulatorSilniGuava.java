@@ -11,6 +11,6 @@ import javahive.silnia.KalkulatorSilni;
 public class KalkulatorSilniGuava implements KalkulatorSilni{
 
     public String licz(int arg) {
-    	return BigIntegerMath.factorial(arg).toString();
+        return BigIntegerMath.factorial(arg).toString();
     }
 }
