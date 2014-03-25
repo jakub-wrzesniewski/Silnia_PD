@@ -16,11 +16,9 @@ import java.math.BigDecimal;
 
 public class KalkulatorSilniBigDecimal implements KalkulatorSilni{
     public String licz(int arg) {
-        //throw new NotImplementedException();
-    	//String stringArg = ""+arg;
-    	BigDecimal BDWynik = BigDecimal.ONE;
+    	BigDecimal bDWynik = BigDecimal.ONE;
     	for(int i=1; i<=arg; i++)
-    		BDWynik = BDWynik.multiply(new BigDecimal(i));
-    	return BDWynik.toString();
+    		bDWynik = bDWynik.multiply(new BigDecimal(i));
+    	return bDWynik.toString();
     }
 }
