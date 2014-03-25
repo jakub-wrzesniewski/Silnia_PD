@@ -7,18 +7,18 @@ import javahive.silnia.KalkulatorSilni;
 
 public class OptymalnyKalkulatorSilni implements KalkulatorSilni{
     
-    private static int MAKSYMALNY_ARGUMENT_DLA_LONG=12;
+    private static final int MAKSYMALNYARGUMENTDLALONG=12;
     
     public String licz(int podstawa){
         KalkulatorSilni i=null;
-        if(podstawa > MAKSYMALNY_ARGUMENT_DLA_LONG){
+        if(podstawa > MAKSYMALNYARGUMENTDLALONG){
         	i = new KalkulatorSilniBigDecimal();
         }
         else{
         	i = new SzybkiKalkulatorSilni();
         }
+        return i.licz(podstawa);
         //w zależności od rozmiaru argumentu powinniśmy użyć algorytmu SzybkaSilnia lub BigDecimalSilnia
         //TODO - zaimplementować to tutaj.
-        return i.licz(podstawa);
     }
 }
